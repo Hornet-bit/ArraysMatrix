@@ -1,7 +1,5 @@
 package by.epamtc.task3.main;
 
-import java.util.Arrays;
-
 public class Task6 {
     public static void main(String[] args) {
 
@@ -14,6 +12,7 @@ public class Task6 {
         int value = 1;
 
         while (value != n * n + 1) {
+
             matrix[(matrix.length - 1) - y][x] = value;
             value++;
 
@@ -23,15 +22,26 @@ public class Task6 {
             if (y >= matrix.length - 1) {
                 y = -1;
             }
+
             y++;
             x++;
+
             if (matrix[matrix.length - 1 - y][x] != 0) {
                 y--;
             }
 
 
         }
-        System.out.println(Arrays.deepToString(matrix));
+
+        for (int i = 0; i < matrix.length; i++) {
+
+            for (int j = 0; j < matrix[0].length; j++) {
+
+                System.out.print(matrix[i][j]+"\t");
+            }
+
+            System.out.println();
+        }
 
     }
 }
